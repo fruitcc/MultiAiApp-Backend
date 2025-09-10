@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: multiaiapp-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      # API keys will be set in Render dashboard
+      # - key: OPENAI_API_KEY
+      #   sync: false
+      # - key: ANTHROPIC_API_KEY
+      #   sync: false
+      # - key: GOOGLE_API_KEY
+      #   sync: false
+      # - key: PERPLEXITY_API_KEY
+      #   sync: false
