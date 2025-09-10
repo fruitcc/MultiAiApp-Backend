@@ -91,7 +91,7 @@ fi
 
 # Step 9: Create PM2 ecosystem file
 print_status "Creating PM2 ecosystem configuration..."
-cat > /var/www/MultiAiApp-Backend/ecosystem.config.js << 'EOF'
+cat > /var/www/MultiAiApp-Backend/ecosystem.config.cjs << 'EOF'
 module.exports = {
   apps: [{
     name: 'multiaiapp-backend',
@@ -189,7 +189,7 @@ echo "   nano /var/www/MultiAiApp-Backend/.env"
 echo ""
 echo "2. Start the application:"
 echo "   cd /var/www/MultiAiApp-Backend"
-echo "   pm2 start ecosystem.config.js"
+echo "   pm2 start ecosystem.config.cjs"
 echo "   pm2 save"
 echo "   pm2 startup systemd -u root --hp /root"
 echo ""

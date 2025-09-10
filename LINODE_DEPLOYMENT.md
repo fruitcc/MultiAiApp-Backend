@@ -95,7 +95,7 @@ Save and exit (Ctrl+X, then Y, then Enter).
 
 Create PM2 ecosystem file:
 ```bash
-sudo nano ecosystem.config.js
+sudo nano ecosystem.config.cjs
 ```
 
 Add this content:
@@ -128,7 +128,7 @@ Start the application:
 sudo mkdir -p /var/log/pm2
 
 # Start the application with PM2
-pm2 start ecosystem.config.js
+pm2 start ecosystem.config.cjs
 
 # Save PM2 configuration
 pm2 save
