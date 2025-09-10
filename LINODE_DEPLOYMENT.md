@@ -82,7 +82,7 @@ GOOGLE_API_KEY=your_actual_google_key
 PERPLEXITY_API_KEY=your_actual_perplexity_key
 
 # Server Configuration
-PORT=3000
+PORT=48395
 NODE_ENV=production
 
 # CORS Configuration (update with your domain)
@@ -151,7 +151,7 @@ server {
     server_name YOUR_DOMAIN_OR_IP;
 
     location / {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:48395;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -221,7 +221,7 @@ sudo certbot --nginx -d YOUR_DOMAIN
 pm2 status
 
 # Check the health endpoint
-curl http://localhost:3000/health
+curl http://localhost:48395/health
 
 # Check logs if needed
 pm2 logs multiaiapp-backend
@@ -290,7 +290,7 @@ pm2 status
 pm2 logs
 
 # Check if port 3000 is listening
-sudo netstat -tulpn | grep :3000
+sudo netstat -tulpn | grep :48395
 ```
 
 ### If API calls fail:

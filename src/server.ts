@@ -8,7 +8,7 @@ dotenv.config();
 import aiRouter from './routes/ai';
 
 const app: Express = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 48395;
 
 const corsOptions = {
   origin: (origin: string | undefined, callback: Function) => {

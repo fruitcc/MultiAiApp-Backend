@@ -104,7 +104,7 @@ module.exports = {
     max_memory_restart: '1G',
     env: {
       NODE_ENV: 'production',
-      PORT: 3000
+      PORT: 48395
     },
     error_file: '/var/log/pm2/multiaiapp-error.log',
     out_file: '/var/log/pm2/multiaiapp-out.log',
@@ -130,7 +130,7 @@ server {
     server_name $SERVER_IP;
 
     location / {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:48395;
         proxy_http_version 1.1;
         proxy_set_header Upgrade \$http_upgrade;
         proxy_set_header Connection 'upgrade';

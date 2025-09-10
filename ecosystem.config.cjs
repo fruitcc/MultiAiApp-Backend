@@ -10,11 +10,11 @@ module.exports = {
     max_memory_restart: '1G',
     env: {
       NODE_ENV: 'production',
-      PORT: 3000
+      PORT: 48395
     },
     env_production: {
       NODE_ENV: 'production',
-      PORT: 3000
+      PORT: 48395
     },
     error_file: '/var/log/pm2/multiaiapp-error.log',
     out_file: '/var/log/pm2/multiaiapp-out.log',
