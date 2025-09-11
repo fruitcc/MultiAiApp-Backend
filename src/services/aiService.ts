@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ChatRequest, ChatResponse, AIService } from '../types';
+import { ChatRequest, ChatResponse, AIService } from '../types/index.js';
 
 export class AIServiceManager {
   private getApiKeys(): Record<AIService, string | undefined> {

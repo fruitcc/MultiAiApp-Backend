@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 // Load environment variables BEFORE importing routes
 dotenv.config();
 
-import aiRouter from './routes/ai';
+import aiRouter from './routes/ai.js';
 
 const app: Express = express();
 const port = process.env.PORT || 48395;

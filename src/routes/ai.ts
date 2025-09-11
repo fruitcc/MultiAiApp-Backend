@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { AIServiceManager } from '../services/aiService';
-import { ChatRequest, AIService } from '../types';
+import { AIServiceManager } from '../services/aiService.js';
+import { ChatRequest, AIService } from '../types/index.js';
 
 const router = Router();
 const aiServiceManager = new AIServiceManager();
