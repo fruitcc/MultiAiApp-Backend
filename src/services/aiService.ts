@@ -106,7 +106,7 @@ export class AIServiceManager {
       endpoint,
       {
         messages: anthropicMessages,
-        model: request.model || 'claude-3-haiku-20240307',
+        model: request.model || this.getDefaultModel('anthropic'),
         max_tokens: request.max_tokens || 1024,
         temperature: request.temperature,
         system: systemMessage?.content,
@@ -141,7 +141,7 @@ export class AIServiceManager {
     request: ChatRequest,
     apiKey: string
   ): Promise<ChatResponse> {
-    const model = request.model || 'gemini-1.5-flash';
+    const model = request.model || this.getDefaultModel('google');
     const endpoint = `${this.endpoints.google}/${model}:generateContent?key=${apiKey}`;
     
     const googleMessages = request.messages.map(msg => ({
@@ -186,14 +186,14 @@ export class AIServiceManager {
 
   private getDefaultModel(service: AIService): string {
     const defaultModels: Record<AIService, string> = {
-      openai: 'gpt-3.5-turbo',
-      anthropic: 'claude-3-haiku-20240307',
-      google: 'gemini-1.5-flash',
-      perplexity: 'sonar',
-      groq: 'llama2-70b-4096',
-      mistral: 'mistral-small',
+      openai: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+      anthropic: process.env.ANTHROPIC_MODEL || 'claude-3-5-sonnet-20241022',
+      google: process.env.GOOGLE_MODEL || 'gemini-2.5-flash-lite',
+      perplexity: process.env.PERPLEXITY_MODEL || 'sonar',
+      groq: process.env.GROQ_MODEL || 'llama-3.3-70b-versatile',
+      mistral: process.env.MISTRAL_MODEL || 'mistral-small-latest',
     };
-    
+
     return defaultModels[service];
   }
 
